@@ -29,11 +29,45 @@ Robot[] robots = new Robot[5];
 		robots[4].setY(500);
 		//5. use another for loop to iterate through the array and make each robot move 
 	    //   a random amount less than 50.
-    	
+		Random rand = new Random();
+		
+		
 		//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.
-
+		while (robots[0].getY() >= 0 || robots[1].getY() >= 0 || robots[2].getY() >= 0 || robots[3].getY() >= 0 || robots[4].getY() >= 0 ) {
+			for (int i = 0; i < 5; i++) {
+				int ran = rand.nextInt(50);
+				robots[i].move(ran);
+			}
+			if(robots[0].getY() <= 0 || robots[1].getY() <= 0 || robots[2].getY() <= 0 || robots[3].getY() <= 0 || robots[4].getY() <= 0 ) {
+				break;
+			}
+		}
 		//7. declare that robot the winner and throw it a party!
-    	
+    		if(robots[0].getY() <= 0) {
+    			for (int i = 0; i < robots.length; i++) {
+					robots[i].sparkle();
+				}
+    		}
+    		if(robots[1].getY() <= 0) {
+    			for (int i = 0; i < robots.length; i++) {
+					robots[i].sparkle();
+				}
+    		}
+    		if(robots[2].getY() <= 0) {
+    			for (int i = 0; i < robots.length; i++) {
+					robots[i].sparkle();
+				}
+    		}
+    		if(robots[3].getY() <= 0) {
+    			for (int i = 0; i < robots.length; i++) {
+					robots[i].sparkle();
+				}
+    		}
+    		if(robots[4].getY() <= 0) {
+    			for (int i = 0; i < robots.length; i++) {
+					robots[i].sparkle();
+				}
+    		}
 		//8. try different races with different amounts of robots.
     	
 	    //9. make the robots race around a circular track.
